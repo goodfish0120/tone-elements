@@ -11,6 +11,17 @@ This file records the current practical requirements for the Tone Elements proto
 - Repeated sound-design rules such as frequency-position rules, amplitude laws, damping laws, grouping laws, motion fields, and noise-band rules should become first-class modules.
 - The UI should not expose every parameter at once. It should let the user select a module or layer, then edit the relevant controls for that object.
 
+## UI Mental Model
+
+The interface should be designed more like PCB/CAM or Photoshop-style layered editing than like a simple music preset picker.
+
+- The right side is the layer/object stack.
+- The center view is the inspectable working surface.
+- The controls edit the selected object, layer, rule, or stack.
+- Layers can be enabled, muted, soloed, selected, grouped, and inspected.
+- The user should be able to isolate a layer stack, inspect its graphs, audition it, then return to the full sound.
+- The important workflow is constructive editing: add objects and laws, inspect their effect, then combine them into a sound.
+
 ## Required Analysis Views
 
 The prototype needs visual views that make sound structure inspectable:
