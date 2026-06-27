@@ -11,6 +11,11 @@
 - 觀察不同結構如何對應到稀有、神聖、腐化、安全、危險等聽感
 - 之後再把這些結構轉成可重建、可變形、可輸出的音色素材
 
+## 直接使用
+
+- GitHub Pages：<https://goodfish0120.github.io/tone-elements/>
+- 單音結構原型：<https://goodfish0120.github.io/tone-elements/lab/single-note-lab.html>
+
 ## 名字
 
 `tone-elements` 是對外專案名稱。
