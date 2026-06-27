@@ -34,6 +34,7 @@
 - `lab/layer-stack-lab.html`：比例位置原型，負責把基準音、比例、跨八度位置、cents 偏移與時間包絡拆成可疊加圖層
 - `lab/resonance-tuner.html`：原始 Resonance Tuner，負責分析聲音指紋
 - `lab/single-note-lab.html`：單音結構原型，負責設計一個可聽的虛擬音色
+- `docs/current-requirements.md`：目前正在形成的工程需求與視覺化需求
 - `docs/project-purpose.md`：項目目的
 - `docs/deep-research-report.md`：前期研究報告
 - `spec/`：之後放 `resonance-profile.json` 規格
