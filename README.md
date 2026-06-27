@@ -14,7 +14,8 @@
 ## 直接使用
 
 - GitHub Pages：<https://goodfish0120.github.io/tone-elements/>
-- 單音結構原型：<https://goodfish0120.github.io/tone-elements/lab/single-note-lab.html>
+- 圖層結構原型：<https://goodfish0120.github.io/tone-elements/lab/layer-stack-lab.html>
+- 舊單音原型：<https://goodfish0120.github.io/tone-elements/lab/single-note-lab.html>
 
 ## 名字
 
@@ -29,7 +30,8 @@
 
 ## 目前檔案
 
-- `index.html`：GitHub Pages 入口，會進入單音結構原型
+- `index.html`：GitHub Pages 入口，會進入圖層結構原型
+- `lab/layer-stack-lab.html`：圖層結構原型，負責把基準音、泛音、點點、葉片、噪聲與尾巴拆成獨立圖層
 - `lab/resonance-tuner.html`：原始 Resonance Tuner，負責分析聲音指紋
 - `lab/single-note-lab.html`：單音結構原型，負責設計一個可聽的虛擬音色
 - `docs/project-purpose.md`：項目目的
