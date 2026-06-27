@@ -35,6 +35,7 @@
 - `lab/resonance-tuner.html`：原始 Resonance Tuner，負責分析聲音指紋
 - `lab/single-note-lab.html`：單音結構原型，負責設計一個可聽的虛擬音色
 - `docs/current-requirements.md`：目前正在形成的工程需求與視覺化需求
+- `docs/feature-registry.md`：功能想法登記、分類、實作切片與驗證方式
 - `docs/project-purpose.md`：項目目的
 - `docs/deep-research-report.md`：前期研究報告
 - `spec/`：之後放 `resonance-profile.json` 規格
