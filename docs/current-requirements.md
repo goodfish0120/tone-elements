@@ -7,9 +7,20 @@ This file records the current practical requirements for the Tone Elements proto
 ## Engineering Direction
 
 - The project still needs many controls. The answer is not to avoid knobs, but to organize them with stricter modules.
+- The goal is not to artificially keep the prototype small. The project should use AI-assisted development to quickly materialize many messy sound ideas so they can be heard, inspected, compared, and either kept or discarded.
 - Controls should edit mathematical and physical rules, not only isolated partials.
 - Repeated sound-design rules such as frequency-position rules, amplitude laws, damping laws, grouping laws, motion fields, and noise-band rules should become first-class modules.
 - The UI should not expose every parameter at once. It should let the user select a module or layer, then edit the relevant controls for that object.
+
+## Exploration Policy
+
+This project is allowed to be broad. Many speculative layer types, laws, fields, and controls should be implemented as experiments instead of being rejected only because they make the system larger.
+
+- Capture every plausible sound operation as an inspectable module or experimental capability.
+- Use modular boundaries, schemas, naming, grouping, and audition tools to contain complexity.
+- Prefer quickly making an idea audible and visible over debating whether it belongs in a minimal product.
+- Keep failed or weak ideas easy to disable, hide, replace, or delete.
+- Treat AI as the acceleration layer: messy ideas should become runnable prototypes fast enough that listening and graph inspection can decide their value.
 
 ## UI Mental Model
 
@@ -48,7 +59,7 @@ These views are required because many controls only make sense if the user can s
 
 ## Near-Term Implication
 
-The next prototype should not keep adding descriptive preset buttons. It should expose a small number of strict module types and show their effect on `frequency -> dB` and `time -> dB` graphs.
+The next prototype should not keep adding descriptive preset buttons. It should expose an expandable module system and show each module's effect on `frequency -> dB` and `time -> dB` graphs.
 
 The right-side layer list should become the audition and inspection surface:
 
