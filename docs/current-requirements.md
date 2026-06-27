@@ -21,7 +21,7 @@ This project is allowed to be broad. Many speculative layer types, laws, fields,
 - Prefer quickly making an idea audible and visible over debating whether it belongs in a minimal product.
 - Keep failed or weak ideas easy to disable, hide, replace, or delete.
 - Treat AI as the acceleration layer: messy ideas should become runnable prototypes fast enough that listening and graph inspection can decide their value.
-- Detailed feature ideas, implementation slices, and verification notes should be sorted into `docs/feature-registry.md` instead of being buried in this summary.
+- Detailed feature ideas, implementation slices, and verification notes should be sorted under `docs/requirements/` instead of being buried in this summary.
 
 ## UI Mental Model
 
