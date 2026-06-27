@@ -1,0 +1,71 @@
+:root{
+  --bg:#070807;
+  --panel:#121514;
+  --panel2:#191e1b;
+  --ink:#f2f5ef;
+  --muted:#98a39a;
+  --line:#2d342f;
+  --blue:#69c7ff;
+  --gold:#f6c85f;
+  --coral:#ff7b6f;
+  --green:#73d483;
+  --violet:#b899ff;
+  --red:#ff6578;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit;color:inherit}
+.app{min-height:100vh;display:grid;grid-template-rows:auto 1fr;gap:12px;padding:14px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.brand{font-size:20px;font-weight:880}
+.subtitle{margin-top:3px;color:var(--muted);font-size:13px}
+.status{color:var(--green);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.workspace{display:grid;grid-template-columns:270px minmax(0,1fr) 330px;gap:12px;min-height:0}
+.panel{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),#0d0f0e);border-radius:8px;padding:14px;min-width:0}
+h2{font-size:12px;margin:0 0 10px;color:#dfe9dd;text-transform:uppercase;letter-spacing:.12em}
+.recipe-grid{display:grid;gap:8px}
+.recipe{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);background:#171b19;border-radius:7px;padding:9px 10px;text-align:left;cursor:pointer}
+.recipe b{font-size:13px}
+.recipe span{font-size:11px;color:var(--muted)}
+.recipe.active{border-color:var(--gold);box-shadow:0 0 0 1px rgba(246,200,95,.2) inset}
+.divider{height:1px;background:var(--line);margin:14px 0}
+.field{display:grid;gap:6px;margin:10px 0;color:#d5ddd2;font-size:13px}
+select,input[type=range]{width:100%}
+select{background:#0c0f0d;border:1px solid var(--line);border-radius:7px;padding:8px}
+input[type=range]{accent-color:var(--gold)}
+.transport{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+button{border:1px solid var(--line);background:#1a201c;border-radius:7px;padding:9px 10px;font-weight:780;cursor:pointer}
+button:hover{border-color:#526053}
+button.primary{background:#193526;border-color:#2d7c50;color:#defce9}
+.stage{display:grid;grid-template-rows:minmax(260px,46vh) auto minmax(0,1fr);gap:10px;min-width:0;min-height:0}
+canvas{display:block;width:100%;height:100%;border:1px solid var(--line);background:#050605;border-radius:8px}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.summary div{border:1px solid var(--line);background:var(--panel2);border-radius:7px;padding:9px;min-width:0}
+.summary b{display:block;font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.summary span{display:block;margin-top:3px;color:var(--muted);font-size:11px}
+.layer-list{display:grid;gap:8px;overflow:auto;padding-right:2px}
+.layer-card{border:1px solid var(--line);background:#101310;border-radius:8px;padding:10px}
+.layer-card.disabled{opacity:.48}
+.layer-head{display:grid;grid-template-columns:auto auto minmax(0,1fr) minmax(120px,170px);gap:8px;align-items:center}
+.toggle,.solo{width:34px;height:30px;display:grid;place-items:center;padding:0}
+.solo.active{border-color:var(--gold);color:var(--gold)}
+.layer-title{min-width:0}
+.layer-name{font-size:14px;font-weight:860;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.layer-role{font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.layer-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+.mini-field{display:grid;gap:4px;min-width:0}
+.mini-field span{display:flex;justify-content:space-between;gap:6px;color:#cfd8cf;font-size:11px}
+.mini-field b{color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums}
+.inspector{min-height:0;display:grid;grid-template-rows:auto 1fr}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;overflow:auto;color:#d9e7d6;font-size:12px;line-height:1.45}
+@media(max-width:1120px){
+  .workspace{grid-template-columns:1fr}
+  .stage{grid-template-rows:380px auto auto}
+  .inspector{min-height:340px}
+}
+@media(max-width:680px){
+  .summary{grid-template-columns:repeat(2,1fr)}
+  .layer-head{grid-template-columns:auto auto minmax(0,1fr)}
+  .layer-head select{grid-column:1 / -1}
+  .layer-controls{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
