@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Single Note Lab</title>
+<link rel="stylesheet" href="./single-note-lab.css" />
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div>
+      <div class="brand">Single Note Lab</div>
+      <div class="tag">單音結構實驗：從乾淨音叉感開始，長出材質、漂移、表面事件與尾巴。</div>
+    </div>
+    <div id="status" class="status">ready</div>
+  </header>
+
+  <section class="grid">
+    <aside class="panel controls">
+      <h2>一個音</h2>
+      <div class="row"><label for="note">基準音</label><span></span></div>
+      <select id="note">
+        <option value="196">G3 196Hz</option>
+        <option value="220">A3 220Hz</option>
+        <option value="261.63" selected>C4 261.63Hz</option>
+        <option value="329.63">E4 329.63Hz</option>
+        <option value="440">A4 440Hz</option>
+      </select>
+
+      <div class="row"><label for="material">材質基底</label><span></span></div>
+      <select id="material">
+        <option value="fork">音叉 / 乾淨</option>
+        <option value="crystal">水晶 / 高頻乾淨</option>
+        <option value="metal">金屬 / 長尾泛音</option>
+        <option value="leather">皮革 / 彈性阻尼</option>
+        <option value="organic">有機 / 溫厚不穩</option>
+      </select>
+
+      <div class="row"><label for="geometry">泛音幾何</label><span></span></div>
+      <select id="geometry">
+        <option value="simple">2/3/5 乾淨比例</option>
+        <option value="seven">7 系古怪比例</option>
+        <option value="bell">鐘狀非整數</option>
+        <option value="sparse">稀疏單純</option>
+      </select>
+
+      <div class="split"></div>
+      <h2>時間與表面</h2>
+      <div class="row"><label for="attack">前端 attack</label><span id="attackV" class="value"></span></div>
+      <input id="attack" type="range" min="2" max="220" value="18" step="1">
+      <div class="row"><label for="body">中段 body</label><span id="bodyV" class="value"></span></div>
+      <input id="body" type="range" min="80" max="1800" value="520" step="10">
+      <div class="row"><label for="tail">尾巴 tail</label><span id="tailV" class="value"></span></div>
+      <input id="tail" type="range" min="80" max="2600" value="900" step="10">
+      <div class="row"><label for="bloom">頻譜綻放</label><span id="bloomV" class="value"></span></div>
+      <input id="bloom" type="range" min="0" max="100" value="44" step="1">
+      <div class="row"><label for="drift">泛音漂移</label><span id="driftV" class="value"></span></div>
+      <input id="drift" type="range" min="0" max="100" value="18" step="1">
+      <div class="row"><label for="noise">噪聲表面</label><span id="noiseV" class="value"></span></div>
+      <input id="noise" type="range" min="0" max="100" value="12" step="1">
+      <div class="row"><label for="damping">阻尼</label><span id="dampingV" class="value"></span></div>
+      <input id="damping" type="range" min="0" max="100" value="34" step="1">
+
+      <div class="row"><label for="surface">表面模式</label><span></span></div>
+      <select id="surface">
+        <option value="none">無 / 只聽骨架</option>
+        <option value="crystal">水晶閃點</option>
+        <option value="fire">火焰片狀生滅</option>
+        <option value="lightning">閃電分叉</option>
+        <option value="rot">腐化髒尾巴</option>
+      </select>
+
+      <div class="buttons">
+        <button id="play" class="primary">Play</button>
+        <button id="random">Random</button>
+        <button id="json">JSON</button>
+        <button id="wav">WAV</button>
+      </div>
+      <p class="hint">先只聽一個音。這頁的目標不是做歌，而是讓一個單音有「材質、內部運動、結果尾巴」。</p>
+    </aside>
+
+    <section class="stage">
+      <canvas id="viz" width="900" height="540" aria-label="resonance geometry"></canvas>
+      <div class="readout">
+        <div class="metric"><b id="mPartials">--</b><span>partial 點</span></div>
+        <div class="metric"><b id="mRelations">--</b><span>2/3/5/7 連線</span></div>
+        <div class="metric"><b id="mDuration">--</b><span>總長</span></div>
+        <div class="metric"><b id="mCharacter">--</b><span>目前傾向</span></div>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <h2>profile</h2>
+      <pre id="profile"></pre>
+    </aside>
+  </section>
+</main>
+
+<script src="../src/single-note/constants.js"></script>
+<script src="../src/single-note/utils.js"></script>
+<script src="../src/single-note/profile.js"></script>
+<script src="../src/single-note/audio.js"></script>
+<script src="../src/single-note/wav.js"></script>
+<script src="../src/single-note/visualizer.js"></script>
+<script src="../src/single-note/app.js"></script>
+</body>
+</html>
