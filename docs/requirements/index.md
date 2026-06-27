@@ -7,10 +7,11 @@ This folder is the modular requirements system for Tone Elements. Use it to keep
 ## Read Order
 
 1. [current-plan.md](current-plan.md): current direction, active queue, and implementation order.
-2. [module-taxonomy.md](module-taxonomy.md): the buckets and layer/module types used to sort ideas.
-3. [feature-card-template.md](feature-card-template.md): the shape for new feature ideas.
-4. [cards/](cards/): detailed feature cards.
-5. [../current-requirements.md](../current-requirements.md): summary of the current product and engineering requirements.
+2. [handoff.md](handoff.md): fresh-context entry, current truth, caveats, and next implementation shape.
+3. [module-taxonomy.md](module-taxonomy.md): the buckets and layer/module types used to sort ideas.
+4. [feature-card-template.md](feature-card-template.md): the shape for new feature ideas.
+5. [cards/](cards/): detailed feature cards.
+6. [../current-requirements.md](../current-requirements.md): summary of the current product and engineering requirements.
 
 ## Current Direction
 
@@ -26,6 +27,7 @@ Core UI metaphor: PCB/CAM or Photoshop-like layered editing.
 ## Active Planning Files
 
 - [current-plan.md](current-plan.md): active queue and next implementation slices.
+- [handoff.md](handoff.md): fresh-context handoff and implementation caveats.
 - [module-taxonomy.md](module-taxonomy.md): object layers, law layers, motion fields, tail shapes, analysis views, audition workflows, research inputs.
 - [feature-card-template.md](feature-card-template.md): required fields for new TE cards.
 

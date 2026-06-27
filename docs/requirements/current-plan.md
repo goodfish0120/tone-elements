@@ -24,6 +24,12 @@ Implemented:
 - Basic enable / solo / remove controls exist.
 - Basic play, JSON, and WAV export exist.
 
+Naming caveat:
+
+- `lab/layer-stack-lab.html` is the current public prototype entry, but the file name is historical.
+- The current page loads `src/ratio-position/*`.
+- `src/layer-stack/*` is legacy/reference unless an active card explicitly reuses it.
+
 Not yet implemented:
 
 - Real `frequency -> dB` view.

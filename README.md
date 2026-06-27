@@ -36,6 +36,7 @@
 - `lab/single-note-lab.html`：單音結構原型，負責設計一個可聽的虛擬音色
 - `docs/current-requirements.md`：目前正在形成的工程需求與視覺化需求
 - `docs/requirements/index.md`：需求文件入口，導向目前計畫、功能卡與分類法
+- `docs/requirements/handoff.md`：換上下文時先讀的交接入口
 - `docs/feature-registry.md`：舊功能登記入口，現在導向 `docs/requirements/`
 - `docs/project-purpose.md`：項目目的
 - `docs/deep-research-report.md`：前期研究報告
