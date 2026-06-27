@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Layer Stack Lab</title>
+<link rel="stylesheet" href="./layer-stack-lab.css" />
+</head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div>
+      <div class="brand">Layer Stack Lab</div>
+      <div class="subtitle">把基準音、泛音、點點、火焰葉片、噪聲面、尾巴當成獨立圖層。</div>
+    </div>
+    <div id="status" class="status">ready</div>
+  </header>
+
+  <section class="workspace">
+    <aside class="panel recipes">
+      <h2>配方</h2>
+      <div id="recipes" class="recipe-grid"></div>
+
+      <div class="divider"></div>
+      <h2>基準</h2>
+      <label class="field">
+        <span>基準音</span>
+        <select id="rootNote"></select>
+      </label>
+      <label class="field">
+        <span>總強度</span>
+        <input id="masterGain" type="range" min="20" max="120" value="88" />
+      </label>
+
+      <div class="transport">
+        <button id="play" class="primary">Play</button>
+        <button id="randomize">Variant</button>
+        <button id="json">JSON</button>
+        <button id="wav">WAV</button>
+      </div>
+    </aside>
+
+    <section class="stage">
+      <canvas id="timeline" width="980" height="520" aria-label="Layer timeline"></canvas>
+      <div class="summary">
+        <div><b id="sumLayers">--</b><span>active layers</span></div>
+        <div><b id="sumEvents">--</b><span>events / nodes</span></div>
+        <div><b id="sumDuration">--</b><span>duration</span></div>
+        <div><b id="sumSolo">--</b><span>audition</span></div>
+      </div>
+      <section id="layerList" class="layer-list"></section>
+    </section>
+
+    <aside class="panel inspector">
+      <h2>目前結構</h2>
+      <pre id="profile"></pre>
+    </aside>
+  </section>
+</main>
+
+<script src="../src/layer-stack/model.js"></script>
+<script src="../src/layer-stack/audio.js"></script>
+<script src="../src/layer-stack/visualizer.js"></script>
+<script src="../src/layer-stack/app.js"></script>
+</body>
+</html>
