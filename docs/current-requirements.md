@@ -43,8 +43,23 @@ Layers are not all the same kind of audio track. Each layer type has its own obj
 - Lifecycle or event-cloud layers edit many small events with birth, growth, motion, decay, density, and randomness rules.
 - Surface-contact layers edit friction-like behavior such as pressure, speed, roughness, stickiness, and contact changes.
 - Envelope or motion layers edit time functions that can drive other objects instead of producing sound directly.
+- Transform or law layers act like filters over selected objects: they may not create sound directly, but they can rewrite gain, dB slope, decay, pitch motion, density, or other parameters according to rules.
 
 The UI should reflect the selected layer type. A partial layer should not expose the same controls as a noise band or event cloud. Each layer card can share common controls such as enable, mute, solo, select, group, and inspect, but the editable parameters below it should come from that layer type's capability schema.
+
+## Filter-Like Laws And Tail Shapes
+
+Some modules should behave like design filters rather than audio tracks. They apply a rule to an existing set of nodes, bands, or events.
+
+Examples:
+
+- Gain law: adjust volume from a frequency or time rule, such as `gainDb = baseDb + slope * log2(frequency / anchor)`.
+- Damping law: make higher frequencies decay faster than lower frequencies.
+- Group law: force a set of partials or events to share an envelope, phase relationship, or motion field.
+- Density law: change how many lifecycle events appear over time.
+- Tail-shape law: rewrite how selected layers disappear.
+
+Tail shape should be treated as an editable morphology, not only a generic release slider. For example, a water-drop-like tail may use a rounded attack, short elastic body, resonant droplet ring, and curved decay to zero. Other tails may be dry, smeared, sticky, granular, broken, or clean. These tail shapes should be visible in the `time -> dB` graph and audible through right-side layer audition.
 
 ## Required Analysis Views
 
