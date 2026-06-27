@@ -22,6 +22,19 @@ The interface should be designed more like PCB/CAM or Photoshop-style layered ed
 - The user should be able to isolate a layer stack, inspect its graphs, audition it, then return to the full sound.
 - The important workflow is constructive editing: add objects and laws, inspect their effect, then combine them into a sound.
 
+## Layer Types And Capabilities
+
+Layers are not all the same kind of audio track. Each layer type has its own object model, parameters, and allowed operations.
+
+- Resonance or partial layers edit discrete frequency nodes and ratio relationships.
+- Spectral law layers edit frequency-to-amplitude rules, slopes, peaks, and damping behavior.
+- Noise-band layers edit continuous frequency regions, width, color, pressure, and filter shape.
+- Lifecycle or event-cloud layers edit many small events with birth, growth, motion, decay, density, and randomness rules.
+- Surface-contact layers edit friction-like behavior such as pressure, speed, roughness, stickiness, and contact changes.
+- Envelope or motion layers edit time functions that can drive other objects instead of producing sound directly.
+
+The UI should reflect the selected layer type. A partial layer should not expose the same controls as a noise band or event cloud. Each layer card can share common controls such as enable, mute, solo, select, group, and inspect, but the editable parameters below it should come from that layer type's capability schema.
+
 ## Required Analysis Views
 
 The prototype needs visual views that make sound structure inspectable:
