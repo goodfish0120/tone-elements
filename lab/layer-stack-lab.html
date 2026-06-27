@@ -3,64 +3,124 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Layer Stack Lab</title>
+<title>Tone Elements - Ratio Position Lab</title>
 <link rel="stylesheet" href="./layer-stack-lab.css" />
 </head>
 <body>
 <main class="app">
   <header class="topbar">
     <div>
-      <div class="brand">Layer Stack Lab</div>
-      <div class="subtitle">把基準音、泛音、點點、火焰葉片、噪聲面、尾巴當成獨立圖層。</div>
+      <div class="brand">Tone Elements</div>
+      <div class="subtitle">anchor -> ratio -> octave position -> cents offset -> layer</div>
     </div>
     <div id="status" class="status">ready</div>
   </header>
 
   <section class="workspace">
-    <aside class="panel recipes">
-      <h2>配方</h2>
-      <div id="recipes" class="recipe-grid"></div>
-
-      <div class="divider"></div>
-      <h2>基準</h2>
+    <aside class="panel builder">
+      <h2>Anchor</h2>
       <label class="field">
         <span>基準音</span>
-        <select id="rootNote"></select>
+        <select id="anchorPreset"></select>
       </label>
       <label class="field">
-        <span>總強度</span>
-        <input id="masterGain" type="range" min="20" max="120" value="88" />
+        <span>Hz</span>
+        <input id="anchorHz" type="number" min="20" max="2000" step="0.01" value="220" />
+      </label>
+
+      <div class="divider"></div>
+      <h2>Ratio</h2>
+      <div class="field-grid">
+        <label class="field">
+          <span>分子</span>
+          <input id="numerator" type="number" min="1" max="64" step="1" value="6" />
+        </label>
+        <label class="field">
+          <span>分母</span>
+          <input id="denominator" type="number" min="1" max="64" step="1" value="7" />
+        </label>
+      </div>
+      <div id="ratioPresets" class="preset-grid"></div>
+      <label class="field">
+        <span>offset cents <b id="offsetReadout">0c</b></span>
+        <input id="offsetCents" type="range" min="-100" max="100" step="1" value="0" />
+      </label>
+      <div class="field-grid">
+        <label class="field">
+          <span>octave min</span>
+          <input id="octaveMin" type="number" min="-6" max="10" step="1" value="-1" />
+        </label>
+        <label class="field">
+          <span>octave max</span>
+          <input id="octaveMax" type="number" min="-6" max="10" step="1" value="6" />
+        </label>
+      </div>
+
+      <div class="divider"></div>
+      <h2>Layer Shape</h2>
+      <label class="field">
+        <span>wave</span>
+        <select id="wave">
+          <option value="sine">sine</option>
+          <option value="triangle">triangle</option>
+          <option value="square">square</option>
+          <option value="sawtooth">sawtooth</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>gain <b id="gainReadout">22%</b></span>
+        <input id="gain" type="range" min="0" max="100" value="22" />
+      </label>
+      <div class="field-grid">
+        <label class="field">
+          <span>attack <b id="attackReadout">0.02s</b></span>
+          <input id="attack" type="range" min="1" max="80" value="2" />
+        </label>
+        <label class="field">
+          <span>hold <b id="holdReadout">0.42s</b></span>
+          <input id="hold" type="range" min="1" max="180" value="42" />
+        </label>
+      </div>
+      <label class="field">
+        <span>release <b id="releaseReadout">0.58s</b></span>
+        <input id="release" type="range" min="2" max="240" value="58" />
       </label>
 
       <div class="transport">
         <button id="play" class="primary">Play</button>
-        <button id="randomize">Variant</button>
+        <button id="clear">Clear</button>
         <button id="json">JSON</button>
         <button id="wav">WAV</button>
       </div>
     </aside>
 
     <section class="stage">
-      <canvas id="timeline" width="980" height="520" aria-label="Layer timeline"></canvas>
+      <canvas id="frequencyMap" width="980" height="520" aria-label="Frequency map"></canvas>
       <div class="summary">
-        <div><b id="sumLayers">--</b><span>active layers</span></div>
-        <div><b id="sumEvents">--</b><span>events / nodes</span></div>
+        <div><b id="sumAnchor">--</b><span>anchor</span></div>
+        <div><b id="sumRatio">--</b><span>ratio</span></div>
+        <div><b id="sumCandidates">--</b><span>positions</span></div>
         <div><b id="sumDuration">--</b><span>duration</span></div>
-        <div><b id="sumSolo">--</b><span>audition</span></div>
       </div>
-      <section id="layerList" class="layer-list"></section>
+      <section class="candidate-panel">
+        <div class="section-title">候選位置</div>
+        <div id="candidateList" class="candidate-list"></div>
+      </section>
     </section>
 
-    <aside class="panel inspector">
-      <h2>目前結構</h2>
-      <pre id="profile"></pre>
+    <aside class="panel layers-panel">
+      <div class="panel-title-row">
+        <h2>數學圖層</h2>
+        <span id="layerCount" class="pill">0</span>
+      </div>
+      <section id="layerList" class="layer-list"></section>
     </aside>
   </section>
 </main>
 
-<script src="../src/layer-stack/model.js"></script>
-<script src="../src/layer-stack/audio.js"></script>
-<script src="../src/layer-stack/visualizer.js"></script>
-<script src="../src/layer-stack/app.js"></script>
+<script src="../src/ratio-position/model.js"></script>
+<script src="../src/ratio-position/audio.js"></script>
+<script src="../src/ratio-position/visualizer.js"></script>
+<script src="../src/ratio-position/app.js"></script>
 </body>
 </html>
